@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Tasks from './pages/Task';
+import NewTaskModal from './components/NewTaskModal';
 
 function App() {
   const [taskList, setTaskList] = useState([
@@ -10,12 +11,19 @@ function App() {
 
   const [completedTasks, setCompletedTasks] = useState([]);
 
+  const [newTaskModalState, setNewTaskModalState] = useState(false);
+
+  function handleAddTask() {
+
+  }
+
   return (
     <>
       <div id="TopBar">
         <p id="TopBarText">Todo List</p>
-        <button id="TopBarButton">New Task</button>
+        <button id="TopBarButton" onClick={() => {setNewTaskModalState(true)}}>New Task</button>
       </div>
+      <NewTaskModal currentModalState={newTaskModalState} setCurrentModalState={setNewTaskModalState}/>
       <Tasks taskList={taskList} setTaskList={setTaskList} completedTasks={completedTasks} setCompletedTasks={setCompletedTasks}/>
     </>
   );

@@ -23,10 +23,13 @@ body {
   padding: 10px;
   font-size: 1rem;
   border-radius: 8px;
+  color: white;
+  background-color: rgb(0, 56, 56);
 }
 
 #TopBarButton:hover {
   cursor: pointer;
+  background-color: rgba(0, 56, 56, 0.859);
 }
 
 #TopBarButton:active {
@@ -90,7 +93,7 @@ body {
   font-size: 1rem;
 }
 
-#TaskCompletedButton {
+#TaskCompletedButton, #TaskDeleteButton {
   border: 0px;
   margin: 4px;
   margin-bottom: 14px;
@@ -99,11 +102,19 @@ body {
   border-radius: 8px;
 }
 
-#TaskCompletedButton:hover {
+#TaskCompletedButton:hover, #TaskDeleteButton:hover {
   cursor: pointer;
 }
 
-#TaskCompletedButton:active {
+#TaskCompletedButton:active, #TaskDeleteButton:active {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
+}
+
+#TaskDeleteButton {
+  background-color: red;
+}
+
+#ModalContainer {
+  background-color: white;
 }
