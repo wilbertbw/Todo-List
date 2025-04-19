@@ -8,13 +8,15 @@ function App() {
     {name: "Study", description: "Study for exams", deadline: "20 April 2025", completed: false}
   ]);
 
+  const [completedTasks, setCompletedtasks] = useState([]);
+
   return (
     <>
       <div id="TopBar">
         <p id="TopBarText">Todo List</p>
         <button id="TopBarButton">New Task</button>
       </div>
-      <Tasks taskList={taskList}/>
+      <Tasks taskList={taskList} completedTasks={completedTasks}/>
     </>
   );
 }
