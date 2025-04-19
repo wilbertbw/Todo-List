@@ -124,3 +124,40 @@ body {
 #NewTaskModal::backdrop {
   background-color: rgba(0, 0, 0, 0.55);
 }
+
+#InputField {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}
+
+#InputField textarea {
+  height: 70px;
+}
+
+#InputField label {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#NewTaskButtonContainer {
+  display: flex;
+  justify-content: end;
+}
+
+#NewTaskButtonContainer button {
+  margin: 4px;
+  border: 0px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+#NewTaskButtonContainer button:hover {
+  cursor: pointer;
+}
+
+#NewTaskButtonContainer button:active {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
