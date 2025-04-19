@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './App.css';
-import TaskPage from './pages/Task';
+import Tasks from './pages/Task';
 
-function App() {
+function App() {  
   const taskList = [
-    {name: "Do Assignments", description: "Complete assignment from courses", deadline: "17 April 2025", completed: false},
-    {name: "Study", description: "Study for final exam", deadline: "20 April 2025", completed: false},
+    {name: "Do Assignments", description: "Complete assignments", deadline: "17 April 2025", completed: false},
+    {name: "Study", description: "Study for exams", deadline: "20 April 2025", completed: false}
   ];
 
   return (
@@ -14,7 +14,7 @@ function App() {
         <p id="TopBarText">Todo List</p>
         <button id="TopBarButton">New Task</button>
       </div>
-      <TaskPage />
+      <Tasks taskList={taskList}/>
     </>
   );
 }

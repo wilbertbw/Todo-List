@@ -1,7 +1,7 @@
-export default function TaskTile() {
+export default function TaskTile({ taskData }) {
   return (
     <div>
-      <p>Study</p>
+      <p>{taskData.name}</p>
     </div>
   )
 }
