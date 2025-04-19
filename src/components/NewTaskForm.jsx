@@ -18,16 +18,16 @@ export default function NewTaskForm({ setTaskList, setNewTaskModalState}) {
     const enteredName = nameRef.current.value;
     const enteredDescription = descriptionRef.current.value;
     const enteredDeadline = deadlineRef.current.value;
+    const enteredDeadlineFormatted = new Date(enteredDeadline).toLocaleDateString("en-US");
 
     if (enteredName.trim() === '' || enteredDescription.trim() === '' || enteredDeadline.trim() === '') {
-        console.log("there are empty fields");
         return;
     }
 
     setCurrTaskId((prevTaskId) => {return prevTaskId + 1});
 
     setTaskList((prevTaskList) => {
-      return [...prevTaskList, {id: currTaskId, name: enteredName, description: enteredDescription, deadline: enteredDeadline}];
+      return [...prevTaskList, {id: currTaskId, name: enteredName, description: enteredDescription, deadline: enteredDeadlineFormatted}];
     });
 
     clearInputFields();
