@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import TaskPage from './pages/Task';
 
 function App() {
+  const taskList = [
+    {name: "Do Assignments", description: "Complete assignment from courses", deadline: "17 April 2025", completed: false},
+    {name: "Study", description: "Study for final exam", deadline: "20 April 2025", completed: false},
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div id="TopBar">
+        <p id="TopBarText">Todo List</p>
+        <button id="TopBarButton">New Task</button>
+      </div>
+      <TaskPage />
+    </>
   );
 }
 
