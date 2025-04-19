@@ -4,11 +4,11 @@ import Tasks from './pages/Task';
 
 function App() {
   const [taskList, setTaskList] = useState([
-    {name: "Do Assignments", description: "Complete assignments", deadline: "17 April 2025", completed: false},
-    {name: "Study", description: "Study for exams", deadline: "20 April 2025", completed: false}
+    {id: 0, name: "Do Assignments", description: "Complete assignments", deadline: "17 April 2025", completed: false},
+    {id: 1, name: "Study", description: "Study for exams", deadline: "20 April 2025", completed: false}
   ]);
 
-  const [completedTasks, setCompletedtasks] = useState([]);
+  const [completedTasks, setCompletedTasks] = useState([]);
 
   return (
     <>
@@ -16,7 +16,7 @@ function App() {
         <p id="TopBarText">Todo List</p>
         <button id="TopBarButton">New Task</button>
       </div>
-      <Tasks taskList={taskList} completedTasks={completedTasks}/>
+      <Tasks taskList={taskList} setTaskList={setTaskList} completedTasks={completedTasks} setCompletedTasks={setCompletedTasks}/>
     </>
   );
 }
