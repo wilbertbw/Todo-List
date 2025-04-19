@@ -5,10 +5,7 @@ import NewTaskModal from './components/NewTaskModal';
 import NewTaskForm from './components/NewTaskForm';
 
 function App() {
-  const [taskList, setTaskList] = useState([
-    {id: 5, name: "Do Assignments", description: "Complete assignments", deadline: "17 April 2025", completed: false},
-    {id: 6, name: "Study", description: "Study for exams", deadline: "20 April 2025", completed: false}
-  ]);
+  const [taskList, setTaskList] = useState([]);
 
   const [completedTasks, setCompletedTasks] = useState([]);
 
