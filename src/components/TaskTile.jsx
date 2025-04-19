@@ -20,7 +20,7 @@ export default function TaskTile({ taskList, setTaskList, completedTasks, setCom
     <div id="TaskTile">
       <p id="TaskName">{taskData.name}</p>
       <p id="TaskDescription">{taskData.description}</p>
-      <p id="TaskDeadline">{taskData.deadline}</p>
+      <p id="TaskDeadline">Deadline: {taskData.deadline}</p>
       <button id="TaskCompletedButton" onClick={handleTaskCompleted}>Mark as Completed</button>
       <button id="TaskDeleteButton" onClick={handleDeleteTask}>Delete Task</button>
     </div>

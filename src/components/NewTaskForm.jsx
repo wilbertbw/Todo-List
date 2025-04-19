@@ -8,6 +8,12 @@ export default function NewTaskForm({ setTaskList, setNewTaskModalState}) {
   const descriptionRef = useRef();
   const deadlineRef = useRef();
 
+  function clearInputFields() {
+    nameRef.current.value = null;
+    descriptionRef.current.value = null;
+    deadlineRef.current.value = null;
+  }
+
   function handleAddNewTask() {
     const enteredName = nameRef.current.value;
     const enteredDescription = descriptionRef.current.value;
@@ -24,6 +30,8 @@ export default function NewTaskForm({ setTaskList, setNewTaskModalState}) {
       return [...prevTaskList, {id: currTaskId, name: enteredName, description: enteredDescription, deadline: enteredDeadline}];
     });
 
+    clearInputFields();
+
     setNewTaskModalState(false);
   }
 
@@ -34,7 +42,7 @@ export default function NewTaskForm({ setTaskList, setNewTaskModalState}) {
       <Input ref={deadlineRef} inputType="date" labelText="Deadline"/>
       <div id="NewTaskButtonContainer">
         <button onClick={() => {handleAddNewTask()}}>Save Task</button>
-        <button onClick={() => {setNewTaskModalState(false)}}>Cancel</button>
+        <button onClick={() => {setNewTaskModalState(false); clearInputFields();}}>Cancel</button>
       </div>
     </>
   )
