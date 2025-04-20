@@ -45,15 +45,15 @@ export default function NewTaskForm({ taskList, setTaskList, setNewTaskModalStat
         return;
     }
 
-    setCurrTaskId((prevTaskId) => {return prevTaskId + 1});
-
-    setTaskList(() => {
-      return (taskList.filter(currTask => (currTask.id !== editTaskId)));
+    const newTaskList = taskList.map(task => {
+      if (task.id === editTaskId) {
+        return {...task, name: enteredName, description: enteredDescription, deadline: enteredDeadlineFormatted};
+      } else {
+        return task;
+      }
     });
 
-    setTaskList((prevTaskList) => {
-      return [...prevTaskList, {id: editTaskId, name: enteredName, description: enteredDescription, deadline: enteredDeadlineFormatted}];
-    });
+    setTaskList(newTaskList);
 
     clearInputFields();
 
