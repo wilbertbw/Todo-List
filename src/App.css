@@ -93,7 +93,7 @@ body {
   font-size: 1rem;
 }
 
-#TaskCompletedButton, #TaskDeleteButton {
+#TaskCompletedButton, #TaskDeleteButton, #TaskEditButton {
   border: 0px;
   margin: 4px;
   margin-bottom: 14px;
@@ -102,11 +102,11 @@ body {
   border-radius: 8px;
 }
 
-#TaskCompletedButton:hover, #TaskDeleteButton:hover {
+#TaskCompletedButton:hover, #TaskDeleteButton:hover, #TaskEditButton:hover {
   cursor: pointer;
 }
 
-#TaskCompletedButton:active, #TaskDeleteButton:active {
+#TaskCompletedButton:active, #TaskDeleteButton:active, #TaskEditButton:active {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
