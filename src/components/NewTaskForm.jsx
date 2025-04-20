@@ -1,12 +1,8 @@
 import Input from "./Input";
 import { useState, useRef } from "react";
 
-export default function NewTaskForm({ taskList, setTaskList, setNewTaskModalState, setEditTaskModalState, mode, editTaskId }) {
+export default function NewTaskForm({ taskList, setTaskList, setNewTaskModalState, setEditTaskModalState, mode, editTaskId, nameRef, descriptionRef, deadlineRef }) {
   const [currTaskId, setCurrTaskId] = useState(0);
-
-  const nameRef = useRef();
-  const descriptionRef = useRef();
-  const deadlineRef = useRef();
 
   function clearInputFields() {
     nameRef.current.value = null;
@@ -18,7 +14,9 @@ export default function NewTaskForm({ taskList, setTaskList, setNewTaskModalStat
     const enteredName = nameRef.current.value;
     const enteredDescription = descriptionRef.current.value;
     const enteredDeadline = deadlineRef.current.value;
-    const enteredDeadlineFormatted = new Date(enteredDeadline).toLocaleDateString("en-US");
+    
+    const [year, month, day] = deadlineRef.current.value.split('-');
+    const enteredDeadlineFormatted= `${month}/${day}/${year}`;
 
     if (enteredName.trim() === '' || enteredDescription.trim() === '' || enteredDeadline.trim() === '') {
         return;
@@ -39,7 +37,9 @@ export default function NewTaskForm({ taskList, setTaskList, setNewTaskModalStat
     const enteredName = nameRef.current.value;
     const enteredDescription = descriptionRef.current.value;
     const enteredDeadline = deadlineRef.current.value;
-    const enteredDeadlineFormatted = new Date(enteredDeadline).toLocaleDateString("en-US");
+
+    const [year, month, day] = deadlineRef.current.value.split('-');
+    const enteredDeadlineFormatted= `${month}/${day}/${year}`;
 
     if (enteredName.trim() === '' || enteredDescription.trim() === '' || enteredDeadline.trim() === '') {
         return;

@@ -161,3 +161,11 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
+
+#CompletedTasksText, #CurrentTasksText {
+  color: white;
+  font-size: 1.3rem;
+  padding: 1.5rem;
+  justify-content: center;
+  align-self: center;
+}
