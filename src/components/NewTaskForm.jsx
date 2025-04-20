@@ -1,5 +1,5 @@
 import Input from "./Input";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function NewTaskForm({ taskList, setTaskList, setNewTaskModalState, setEditTaskModalState, mode, editTaskId, nameRef, descriptionRef, deadlineRef }) {
   const [currTaskId, setCurrTaskId] = useState(0);
