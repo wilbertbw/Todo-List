@@ -1,4 +1,4 @@
-export default function TaskTile({ taskList, setTaskList, completedTasks, setCompletedTasks, taskData }) {
+export default function TaskTile({ taskList, setTaskList, completedTasks, setCompletedTasks, taskData, taskCompleted }) {
   function handleDeleteTask() {
     setTaskList(() => {
       return (taskList.filter(currTask => (currTask.id !== taskData.id)));
@@ -21,7 +21,7 @@ export default function TaskTile({ taskList, setTaskList, completedTasks, setCom
       <p id="TaskName">{taskData.name}</p>
       <p id="TaskDescription">{taskData.description}</p>
       <p id="TaskDeadline">Deadline: {taskData.deadline}</p>
-      <button id="TaskCompletedButton" onClick={handleTaskCompleted}>Mark as Completed</button>
+      {!taskCompleted && <button id="TaskCompletedButton" onClick={handleTaskCompleted}>Mark as Completed</button>}
       <button id="TaskDeleteButton" onClick={handleDeleteTask}>Delete Task</button>
     </div>
   )

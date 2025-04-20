@@ -15,7 +15,7 @@ export default function Tasks({ taskList, setTaskList, completedTasks, setComple
         {completedTasks.length === 0 && <p id="NoTasksText">No completed tasks.</p>}
         {completedTasks.length > 0 &&
           completedTasks.map((taskData) => {
-            return(<TaskTile key={taskData.id} taskList={taskList} setTaskList={setTaskList} completedTasks={completedTasks} setCompletedTasks={setCompletedTasks} taskData={taskData} />)
+            return(<TaskTile key={taskData.id} taskList={taskList} setTaskList={setTaskList} completedTasks={completedTasks} setCompletedTasks={setCompletedTasks} taskData={taskData} taskCompleted/>)
           })
         }
       </div>
